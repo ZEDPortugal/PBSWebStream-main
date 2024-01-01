@@ -1,6 +1,10 @@
 'use client';
-import React, { useState, useRef } from 'react';
-import DesignedAudioPlayer from './DesignedAudioPlayer';
+import React, { useState, useRef, forwardRef } from 'react';
+import DesignedAudioPlayer from './DesignedAudioPlayer'
+
+interface DesignedAudioPlayerProps {
+  src: string;
+}
 
 const sources = [
   {
@@ -35,7 +39,6 @@ export default function Home() {
     setSelectedSource(index);
   };
 
-
   return (
     <div
       className="relative bg-gray-500 flex min-h-screen flex-col items-center justify-between"
@@ -52,7 +55,7 @@ export default function Home() {
         <img className="absolute top-10 object-scale-down w-48 drop-shadow-2xl" src={sources[selectedSource].logo} alt="LOGO" />
         <div className="absolute bottom-10">
           <div>
-            <DesignedAudioPlayer src={sources[selectedSource].src} ref={audioRef} />
+            <DesignedAudioPlayer src={sources[selectedSource].src}/>
           </div>
         </div>
       </div>
