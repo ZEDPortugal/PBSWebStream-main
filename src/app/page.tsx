@@ -74,6 +74,7 @@ export default function Home() {
             </button>
           </div>
         ))}
+        <h1 className="absolute text-gray-500 text-sm bottom-2 right-32 mr-2">POWERED BY</h1> <a className="absolute text-gray-500 text-sm bottom-2 right-5 hover:font-bold hover:text-indigo-900 ease-in-out duration-300" href='https://github.com/ZEDPortugal'>ZED PORTUGAL</a>
       </div>
     </div>
   );
