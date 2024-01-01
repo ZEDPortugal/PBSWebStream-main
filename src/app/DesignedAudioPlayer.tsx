@@ -88,7 +88,8 @@ const DesignedAudioPlayer: React.FC<DesignedAudioPlayerProps> = ({ src }) => {
       </div>
 
 
-      <audio ref={audioRef} src={src} preload="none" />
+      <audio ref={audioRef} src={src} preload="auto" />
+
     </div>
   );
 };
