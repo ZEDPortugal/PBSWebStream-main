@@ -1,8 +1,5 @@
-/* @jsxImportSource @emotion/react */
 import React, { useEffect, useRef, useState } from 'react';
-import { FaPlay, FaStop } from 'react-icons/fa';  // Use FaPlay and FaStop from 'react-icons/fa' instead
-// You can use any other suitable icons from 'react-icons' as needed
-
+import { BsPlayFill, BsStopFill } from 'react-icons/bs';
 let currentlyPlaying: HTMLAudioElement | null = null;
 
 type DesignedAudioPlayerProps = {
@@ -27,6 +24,11 @@ const DesignedAudioPlayer: React.FC<DesignedAudioPlayerProps> = ({ src }) => {
     };
 
     const handlePause = () => {
+      // Ensure the latest src is used when pausing
+      if (audio.src) {
+        audio.src = src;
+      }
+      audio.pause();
       setIsPlaying(false);
     };
 
@@ -37,12 +39,13 @@ const DesignedAudioPlayer: React.FC<DesignedAudioPlayerProps> = ({ src }) => {
       audio.removeEventListener('play', handlePlay);
       audio.removeEventListener('pause', handlePause);
     };
-  }, []);
+  }, [src]);
 
   const togglePlayPause = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
+        audioRef.current.src = src;
       } else {
         audioRef.current.play();
       }
@@ -68,7 +71,7 @@ const DesignedAudioPlayer: React.FC<DesignedAudioPlayerProps> = ({ src }) => {
           isPlaying ? ' ease-in-out duration-500 focus:ring-red-700' : ''
         } focus:ring-opacity-50`}
       >
-        {isPlaying ? <FaStop /> : <FaPlay />}
+        {isPlaying ? <BsStopFill /> : <BsPlayFill />}
       </button>
 
       <div className="mt-2 rounded-full">
@@ -83,6 +86,7 @@ const DesignedAudioPlayer: React.FC<DesignedAudioPlayerProps> = ({ src }) => {
           onChange={handleVolumeChange}
         /></label>
       </div>
+
 
       <audio ref={audioRef} src={src} preload="none" />
     </div>
