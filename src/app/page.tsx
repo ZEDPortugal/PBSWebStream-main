@@ -25,15 +25,16 @@ const backgroundImages = [
 
 export default function Home() {
   const [selectedSource, setSelectedSource] = useState(0);
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const handleSourceChange = (index: React.SetStateAction<number>) => {
+  const handleSourceChange = (index: number) => {
     // Pause the audio player when source changes
     if (audioRef.current) {
       audioRef.current.pause();
     }
     setSelectedSource(index);
   };
+
 
   return (
     <div
