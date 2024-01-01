@@ -27,7 +27,7 @@ export default function Home() {
   const [selectedSource, setSelectedSource] = useState(0);
   const audioRef = useRef(null);
 
-  const handleSourceChange = (index) => {
+  const handleSourceChange = (index: any) => {
     // Pause the audio player when source changes
     if (audioRef.current) {
       audioRef.current.pause();
