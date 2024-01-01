@@ -70,7 +70,7 @@ export default function Home() {
             <button
               className="relative top-96 mt-36 glass hover:text-white focus:outline-none ease-in-out duration-300  text-gray-300 box mx-2 py-2 px-7 rounded-2xl hover:bg-gray-800 hover:text-xl ease-in-out duration-500 "
             >
-              {index === 0 ? 'REPUBLIKA FM1' : index === 1 ? 'CAPITAL FM2' : 'RADYO PILIPINAS 1'}
+              {index === 0 ? 'FM1' : index === 1 ? 'FM2' : 'RP1'}
             </button>
           </div>
         ))}
