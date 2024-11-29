@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef, forwardRef } from 'react';
+import React, { useState, useRef } from 'react';
 import DesignedAudioPlayer from './DesignedAudioPlayer'
 
 interface DesignedAudioPlayerProps {
@@ -50,8 +50,10 @@ export default function Home() {
       style={{
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)), url(${backgroundImages[selectedSource]})`,
         backgroundSize: 'cover',
+        backgroundPosition: 'center',
         backgroundBlendMode: 'overlay',
-        transition: 'background-image 0.5s ease-in-out' // Add transition
+        transition: 'background-image 0.5s ease-in-out',
+        height: '100vh' // Ensure the container takes full screen height
       }}
     >
       <img className="absolute w-64 top-3 hover:w-72 ease-in-out duration-300" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Philippine_Broadcasting_Service_%28PBS%29.svg/270px-Philippine_Broadcasting_Service_%28PBS%29.svg.png" alt="" />
