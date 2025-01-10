@@ -21,11 +21,10 @@ const sources = [
   }
 ];
 
-// Update with local paths from the `public` folder
 const backgroundImages = [
-  "/FM1-Booth1.jpg",  // FM1-Booth1 image from the `public` folder
-  "/FM2-Booth1.jpg",  // FM2-Booth1 image from the `public` folder
-  "/RP1-Booth1.jpg"   // RP1-Booth1 image from the `public` folder
+  "https://pbs.gov.ph/wp-content/uploads/2018/02/FM1_Booth1.jpg",
+  "https://pbs.gov.ph/wp-content/uploads/2018/02/FM2-Booth1.jpg",
+  "https://pbs.gov.ph/wp-content/uploads/2018/02/RP1-Booth2.jpg"
 ];
 
 export default function Home() {
